@@ -1,0 +1,35 @@
+return {
+  {
+    'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    opts = {
+      lazy_load = true,
+      user_default_options = {
+        names = true,
+        names_opts = {
+          lowercase = true,
+          camelcase = true,
+          uppercase = true,
+          strip_digits = false,
+        },
+        names_custom = false,
+        RGB = true,
+        RGBA = true,
+        RRGGBB = true,
+        RRGGBBAA = true,
+        AARRGGBB = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        oklch_fn = true,
+        css = true,
+        css_fn = true,
+        tailwind = true,
+        sass = { enable = false, parsers = { 'css' } },
+        mode = 'virtualtext',
+        virtualtext = '■',
+        virtualtext_inline = 'before',
+        virtualtext_mode = 'foreground',
+      },
+    },
+  },
+}
