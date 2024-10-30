@@ -1,0 +1,75 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin": "6px 6px 0 6px",
+  "spacing": 18,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "temperature",
+    "pulseaudio",
+    "clock",
+    "custom/powermenu"
+  ],
+  "custom/powermenu": {
+    //"on-click": "hyprctl dispatch exit", // FIXME: instant logout after click
+    "format": "",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format-icons": {
+      "active": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "hyprland/window": {},
+  "clock": {
+    "tooltip": true,
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%d %B %Y}"
+  },
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": "true"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "MUTE ",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  }
+}

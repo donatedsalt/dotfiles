@@ -1,0 +1,3 @@
+# Neovim config
+
+idk when it will be complete...
