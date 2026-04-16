@@ -7,24 +7,23 @@ return {
       'williamboman/mason.nvim',
       'jay-babu/mason-nvim-dap.nvim',
     },
-    keys = function(_, keys)
+    keys = function()
       local dap = require 'dap'
       local dapui = require 'dapui'
       return {
         { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
-        { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
-        { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
-        { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
-        { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+        { '<F10>', dap.step_over, desc = 'Debug: Step Over' },
+        { '<F11>', dap.step_into, desc = 'Debug: Step Into' },
+        { '<F12>', dap.step_out, desc = 'Debug: Step Out' },
+        { '<F9>', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
         {
-          '<leader>B',
+          '<S-F9>',
           function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
           end,
-          desc = 'Debug: Set Breakpoint',
+          desc = 'Debug: Set Conditional Breakpoint',
         },
-        { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
-        unpack(keys),
+        { '<F7>', dapui.toggle, desc = 'Debug: Toggle UI' },
       }
     end,
     config = function()

@@ -360,10 +360,13 @@ return {
       {
         '<leader>ca',
         vim.lsp.buf.code_action,
-        {
-          lsp = { method = 'textDocument/codeAction' },
-        },
         desc = 'Code Action',
+        mode = { 'n', 'x' },
+      },
+      {
+        '<leader>cr',
+        vim.lsp.buf.rename,
+        desc = 'Rename',
       },
       {
         'gd',
@@ -452,11 +455,25 @@ return {
         desc = 'Dismiss All Notifications',
       },
       {
-        '<leader>bd',
+        '<leader>bq',
         function()
           Snacks.bufdelete()
         end,
-        desc = 'Delete Buffer',
+        desc = 'Close Buffer',
+      },
+      {
+        '<leader>bo',
+        function()
+          Snacks.bufdelete.other()
+        end,
+        desc = 'Close Other Buffers',
+      },
+      {
+        '<leader>ba',
+        function()
+          Snacks.bufdelete.all()
+        end,
+        desc = 'Close All Buffers',
       },
       {
         '<leader>cR',

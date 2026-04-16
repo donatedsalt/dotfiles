@@ -21,7 +21,6 @@ return {
         { '<leader>g', group = 'Git' },
         { '<leader>e', group = 'Explorer' },
         { '<leader>b', group = 'Buffer' },
-        { '<leader>u', group = 'Ui' },
       },
       win = {
         border = 'rounded',
