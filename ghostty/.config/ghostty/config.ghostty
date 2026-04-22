@@ -7,9 +7,10 @@ window-height = 35
 window-width = 120
 
 # background-opacity = 0.9
-# theme = Kanagawa Wave
 
 custom-shader = shaders/cursor_smear.glsl
 # custom-shader = shaders/cursor_blaze.glsl
 
 keybind = ctrl+enter=unbind
+
+config-file = ?auto/theme.ghostty
